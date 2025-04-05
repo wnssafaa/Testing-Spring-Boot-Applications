@@ -16,19 +16,19 @@ public class StudentControler {
     public StudentControler(StudentService servic) {
         this.servic = servic;
     }
-    @PostMapping("/create")
+    @PostMapping("/admin/create")
     public String create(@RequestBody Student S){
        return servic.CreatStudent(S);
     }
-    @PutMapping("/update")
+    @PutMapping("/admin/update")
     public String update(@RequestBody Student S){
         return servic.UpdateStudent(S);
     }
-    @DeleteMapping("/delete{id}")
+    @DeleteMapping("/admin/delete{id}")
     public String delete(@PathVariable long id){
         return servic.delete(id);
     }
-    @GetMapping("/list")
+    @GetMapping("/user/list")
     List<Student> all(){
         return servic.list();
     }
